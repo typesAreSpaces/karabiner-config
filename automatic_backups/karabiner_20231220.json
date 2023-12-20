@@ -17,160 +17,116 @@
                     "mouse_motion_to_scroll.speed": 100
                 },
                 "rules": [
-                    {
-                        "description": "Open emacs",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "e",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command",
-                                            "left_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "/opt/homebrew/bin/emacsclient -c -s jose -a emacs"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "- zoom",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "pointing_button": "button1",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                  {
-                                    "key_code": "hyphen",
-                                    "modifiers": "left_command"
-                                  }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "+ zoom",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "pointing_button": "button2",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                  {
-                                    "key_code": "equal_sign",
-                                    "modifiers": "left_command"
-                                  }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Open alacritty",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "open_bracket",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command",
-                                            "left_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Alacritty.app/Contents/MacOS/alacritty"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Reattach to alacritty",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "close_bracket",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command",
-                                            "left_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "/Applications/Alacritty.app/Contents/MacOS/alacritty -e /opt/homebrew/bin/tmux attach"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Open wezterm",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "t",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command",
-                                            "left_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "/opt/homebrew/bin/wezterm"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Reattach to wezterm",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "r",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command",
-                                            "left_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "/opt/homebrew/bin/wezterm -e /opt/homebrew/bin/tmux attach"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    }
+                  {
+                    "description": "Open emacs",
+                    "manipulators" : [
+                      {
+                        "from" : {
+                          "key_code": "e",
+                          "modifiers" : {
+                            "mandatory" : [
+                              "left_command",
+                              "left_shift"
+                            ]
+                          }
+                        },
+                        "to" : [
+                          {
+                            "shell_command": "/opt/homebrew/bin/emacsclient -c -s jose -a emacs"
+                          }
+                        ],
+                        "type": "basic"
+                      }
+                    ]
+                  },
+                  {
+                    "description": "Open alacritty",
+                    "manipulators" : [
+                      {
+                        "from" : {
+                          "key_code": "open_bracket",
+                          "modifiers" : {
+                            "mandatory" : [
+                              "left_command",
+                              "left_shift"
+                            ]
+                          }
+                        },
+                        "to" : [
+                          {
+                            "shell_command": "/Applications/Alacritty.app/Contents/MacOS/alacritty"
+                          }
+                        ],
+                        "type": "basic"
+                      }
+                    ]
+                  },
+                  {
+                    "description": "Reattach to alacritty",
+                    "manipulators" : [
+                      {
+                        "from" : {
+                          "key_code": "close_bracket",
+                          "modifiers" : {
+                            "mandatory" : [
+                              "left_command",
+                              "left_shift"
+                            ]
+                          }
+                        },
+                        "to" : [
+                          {
+                            "shell_command": "/Applications/Alacritty.app/Contents/MacOS/alacritty -e /opt/homebrew/bin/tmux attach"
+                          }
+                        ],
+                        "type": "basic"
+                      }
+                    ]
+                  },
+                  {
+                    "description": "Open wezterm",
+                    "manipulators" : [
+                      {
+                        "from" : {
+                          "key_code": "t",
+                          "modifiers" : {
+                            "mandatory" : [
+                              "left_command",
+                              "left_shift"
+                            ]
+                          }
+                        },
+                        "to" : [
+                          {
+                            "shell_command": "/opt/homebrew/bin/wezterm"
+                          }
+                        ],
+                        "type": "basic"
+                      }
+                    ]
+                  },
+                  {
+                    "description": "Reattach to wezterm",
+                    "manipulators" : [
+                      {
+                        "from" : {
+                          "key_code": "r",
+                          "modifiers" : {
+                            "mandatory" : [
+                              "left_command",
+                              "left_shift"
+                            ]
+                          }
+                        },
+                        "to" : [
+                          {
+                            "shell_command": "/opt/homebrew/bin/wezterm -e /opt/homebrew/bin/tmux attach"
+                          }
+                        ],
+                        "type": "basic"
+                      }
+                    ]
+                  }
                 ]
             },
             "devices": [
@@ -251,10 +207,10 @@
                         "product_id": 45085,
                         "vendor_id": 1133
                     },
-                    "ignore": false,
+                    "ignore": true,
                     "manipulate_caps_lock_led": false,
                     "mouse_flip_horizontal_wheel": false,
-                    "mouse_flip_vertical_wheel": true,
+                    "mouse_flip_vertical_wheel": false,
                     "mouse_flip_x": false,
                     "mouse_flip_y": false,
                     "mouse_swap_wheels": false,
