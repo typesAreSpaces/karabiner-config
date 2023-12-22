@@ -44,18 +44,18 @@
                         "manipulators": [
                             {
                                 "from": {
+                                    "pointing_button": "button1",
                                     "modifiers": {
                                         "mandatory": [
                                             "left_control"
                                         ]
-                                    },
-                                    "pointing_button": "button1"
+                                    }
                                 },
                                 "to": [
-                                    {
-                                        "key_code": "hyphen",
-                                        "modifiers": "left_command"
-                                    }
+                                  {
+                                    "key_code": "hyphen",
+                                    "modifiers": "left_command"
+                                  }
                                 ],
                                 "type": "basic"
                             }
@@ -66,18 +66,18 @@
                         "manipulators": [
                             {
                                 "from": {
+                                    "pointing_button": "button2",
                                     "modifiers": {
                                         "mandatory": [
                                             "left_control"
                                         ]
-                                    },
-                                    "pointing_button": "button2"
+                                    }
                                 },
                                 "to": [
-                                    {
-                                        "key_code": "equal_sign",
-                                        "modifiers": "left_command"
-                                    }
+                                  {
+                                    "key_code": "equal_sign",
+                                    "modifiers": "left_command"
+                                  }
                                 ],
                                 "type": "basic"
                             }
@@ -97,7 +97,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "delete_or_backspace"
+                                      "key_code": "delete_or_backspace"
                                     }
                                 ],
                                 "type": "basic"
@@ -276,71 +276,6 @@
                     "manipulate_caps_lock_led": false,
                     "mouse_flip_horizontal_wheel": false,
                     "mouse_flip_vertical_wheel": true,
-                    "mouse_flip_x": false,
-                    "mouse_flip_y": false,
-                    "mouse_swap_wheels": false,
-                    "mouse_swap_xy": false,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "game_pad_swap_sticks": false,
-                    "identifiers": {
-                        "is_game_pad": false,
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 258,
-                        "vendor_id": 10730
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": true,
-                    "mouse_flip_horizontal_wheel": false,
-                    "mouse_flip_vertical_wheel": false,
-                    "mouse_flip_x": false,
-                    "mouse_flip_y": false,
-                    "mouse_swap_wheels": false,
-                    "mouse_swap_xy": false,
-                    "simple_modifications": [
-                        {
-                            "from": {
-                                "key_code": "right_command"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "left_command"
-                                }
-                            ]
-                        },
-                        {
-                            "from": {
-                                "key_code": "caps_lock"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "escape"
-                                }
-                            ]
-                        }
-                    ],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "game_pad_swap_sticks": false,
-                    "identifiers": {
-                        "is_game_pad": false,
-                        "is_keyboard": false,
-                        "is_pointing_device": true,
-                        "product_id": 258,
-                        "vendor_id": 10730
-                    },
-                    "ignore": true,
-                    "manipulate_caps_lock_led": false,
-                    "mouse_flip_horizontal_wheel": false,
-                    "mouse_flip_vertical_wheel": false,
                     "mouse_flip_x": false,
                     "mouse_flip_y": false,
                     "mouse_swap_wheels": false,
