@@ -97,7 +97,7 @@
                           },
                           "to": [
                             {
-                              "shell_command": "/opt/homebrew/bin/emacsclient -c -s jose -a emacs"
+                              "shell_command": "/opt/homebrew/bin/emacsclient -c -s jose -a emacs&"
                             }
                           ],
                           "type": "basic"
@@ -119,7 +119,7 @@
                           },
                           "to": [
                             {
-                              "shell_command": "/Applications/Alacritty.app/Contents/MacOS/alacritty"
+                              "shell_command": "/Applications/Alacritty.app/Contents/MacOS/alacritty&"
                             }
                           ],
                           "type": "basic"
@@ -141,7 +141,7 @@
                           },
                           "to": [
                             {
-                              "shell_command": "/Applications/Alacritty.app/Contents/MacOS/alacritty -e /opt/homebrew/bin/tmux attach"
+                              "shell_command": "/Applications/Alacritty.app/Contents/MacOS/alacritty -e /opt/homebrew/bin/tmux attach&"
                             }
                           ],
                           "type": "basic"
@@ -163,7 +163,7 @@
                           },
                           "to": [
                             {
-                              "shell_command": "/opt/homebrew/bin/wezterm"
+                              "shell_command": "/opt/homebrew/bin/wezterm&"
                             }
                           ],
                           "type": "basic"
@@ -185,7 +185,7 @@
                           },
                           "to": [
                             {
-                              "shell_command": "/opt/homebrew/bin/wezterm -e /opt/homebrew/bin/tmux attach"
+                              "shell_command": "/opt/homebrew/bin/wezterm -e /opt/homebrew/bin/tmux attach&"
                             }
                           ],
                           "type": "basic"
