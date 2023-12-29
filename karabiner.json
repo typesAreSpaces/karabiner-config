@@ -27,7 +27,7 @@
                                             "left_control"
                                         ]
                                     },
-                                    "pointing_button": "button1"
+                                    "pointing_button": "button2"
                                 },
                                 "to": [
                                     {
@@ -49,7 +49,7 @@
                                             "left_control"
                                         ]
                                     },
-                                    "pointing_button": "button2"
+                                    "pointing_button": "button1"
                                 },
                                 "to": [
                                     {
