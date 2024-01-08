@@ -35,18 +35,17 @@
                                         "mandatory": [
                                             "left_control"
                                         ]
-                                    }
+                                    },
                                 },
                                 "to": [
                                     {
-                                        "key_code": "escape"
+                                        "key_code": "escape",
                                     }
                                 ],
                                 "type": "basic"
                             }
                         ]
-                    }
-                    ,
+                    },
                     {
                         "description": "left_option twice toggle to get into vim-like hjkl arrows in specified apps",
                         "manipulators": [
