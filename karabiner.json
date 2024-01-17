@@ -68,7 +68,8 @@
                                             "^org.mozilla.firefox",
                                             "^com.google.Chrome",
                                             "^com.apple.Preview",
-                                            "^com.apple.finder"
+                                            "^com.apple.finder",
+                                            "^net.sourceforge.skim-app.skim"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -104,7 +105,8 @@
                                             "^org.mozilla.firefox",
                                             "^com.google.Chrome",
                                             "^com.apple.Preview",
-                                            "^com.apple.finder"
+                                            "^com.apple.finder",
+                                            "^net.sourceforge.skim-app.skim"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -130,7 +132,8 @@
                                             "^org.mozilla.firefox",
                                             "^com.google.Chrome",
                                             "^com.apple.Preview",
-                                            "^com.apple.finder"
+                                            "^com.apple.finder",
+                                            "^net.sourceforge.skim-app.skim"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -187,7 +190,8 @@
                                             "^org.mozilla.firefox",
                                             "^com.google.Chrome",
                                             "^com.apple.Preview",
-                                            "^com.apple.finder"
+                                            "^com.apple.finder",
+                                            "^net.sourceforge.skim-app.skim"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -215,7 +219,8 @@
                                             "^org.mozilla.firefox",
                                             "^com.google.Chrome",
                                             "^com.apple.Preview",
-                                            "^com.apple.finder"
+                                            "^com.apple.finder",
+                                            "^net.sourceforge.skim-app.skim"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -243,7 +248,8 @@
                                             "^org.mozilla.firefox",
                                             "^com.google.Chrome",
                                             "^com.apple.Preview",
-                                            "^com.apple.finder"
+                                            "^com.apple.finder",
+                                            "^net.sourceforge.skim-app.skim"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -271,7 +277,8 @@
                                             "^org.mozilla.firefox",
                                             "^com.google.Chrome",
                                             "^com.apple.Preview",
-                                            "^com.apple.finder"
+                                            "^com.apple.finder",
+                                            "^net.sourceforge.skim-app.skim"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -299,7 +306,8 @@
                                             "^org.mozilla.firefox",
                                             "^com.google.Chrome",
                                             "^com.apple.Preview",
-                                            "^com.apple.finder"
+                                            "^com.apple.finder",
+                                            "^net.sourceforge.skim-app.skim"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -327,7 +335,8 @@
                                             "^org.mozilla.firefox",
                                             "^com.google.Chrome",
                                             "^com.apple.Preview",
-                                            "^com.apple.finder"
+                                            "^com.apple.finder",
+                                            "^net.sourceforge.skim-app.skim"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
