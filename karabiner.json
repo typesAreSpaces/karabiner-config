@@ -472,7 +472,7 @@
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "open_bracket",
+                                    "key_code": "close_bracket",
                                     "modifiers": {
                                         "mandatory": [
                                             "left_command",
@@ -494,7 +494,7 @@
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "close_bracket",
+                                    "key_code": "open_bracket",
                                     "modifiers": {
                                         "mandatory": [
                                             "left_command",
