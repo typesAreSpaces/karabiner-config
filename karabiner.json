@@ -362,7 +362,7 @@
                         "manipulators": [
                             {
                                 "from": {
-                                    key_code: "5",
+                                    "key_code": "5",
                                     "modifiers": {
                                         "mandatory": [
                                             "left_command"
