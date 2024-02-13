@@ -45,8 +45,7 @@
                                 "type": "basic"
                             }
                         ]
-                    }
-                    ,
+                    },
                     {
                         "description": "left_option twice toggle to get into vim-like hjkl arrows in specified apps",
                         "manipulators": [
@@ -352,6 +351,28 @@
                                 "to": [
                                     {
                                         "key_code": "end"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Alternative Alt+Tab",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    key_code: "5",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    },
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": "left_command"
                                     }
                                 ],
                                 "type": "basic"
