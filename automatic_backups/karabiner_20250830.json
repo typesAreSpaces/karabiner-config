@@ -4,31 +4,20 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "+ zoom 2",
+                        "description": "Tap Caps Lock for ESC or Hold for Control",
                         "manipulators": [
                             {
-                                "from": { "pointing_button": "button5" },
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [
                                     {
-                                        "key_code": "equal_sign",
-                                        "modifiers": "left_command"
+                                        "key_code": "left_control",
+                                        "lazy": true
                                     }
                                 ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "- zoom 2",
-                        "manipulators": [
-                            {
-                                "from": { "pointing_button": "button4" },
-                                "to": [
-                                    {
-                                        "key_code": "hyphen",
-                                        "modifiers": "left_command"
-                                    }
-                                ],
+                                "to_if_alone": [{ "key_code": "escape" }],
                                 "type": "basic"
                             }
                         ]
@@ -372,25 +361,6 @@
                         ]
                     },
                     {
-                        "description": "Tap Caps Lock for ESC or Hold for Control",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_control",
-                                        "lazy": true
-                                    }
-                                ],
-                                "to_if_alone": [{ "key_code": "escape" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Delete",
                         "manipulators": [
                             {
@@ -552,31 +522,6 @@
                             "to": [{ "key_code": "left_command" }]
                         }
                     ]
-                },
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 49283,
-                        "vendor_id": 1133
-                    },
-                    "simple_modifications": [
-                        {
-                            "from": { "pointing_button": "button4" },
-                            "to": [{ "pointing_button": "button4" }]
-                        },
-                        {
-                            "from": { "pointing_button": "button5" },
-                            "to": [{ "pointing_button": "button5" }]
-                        }
-                    ]
-                },
-                {
-                    "identifiers": {
-                        "is_pointing_device": true,
-                        "product_id": 49283,
-                        "vendor_id": 1133
-                    },
-                    "ignore": false
                 }
             ],
             "name": "Default",

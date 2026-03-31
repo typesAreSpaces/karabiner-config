@@ -4,36 +4,6 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "+ zoom 2",
-                        "manipulators": [
-                            {
-                                "from": { "pointing_button": "button5" },
-                                "to": [
-                                    {
-                                        "key_code": "equal_sign",
-                                        "modifiers": "left_command"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "- zoom 2",
-                        "manipulators": [
-                            {
-                                "from": { "pointing_button": "button4" },
-                                "to": [
-                                    {
-                                        "key_code": "hyphen",
-                                        "modifiers": "left_command"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "sioyek C-g",
                         "manipulators": [
                             {
@@ -552,31 +522,6 @@
                             "to": [{ "key_code": "left_command" }]
                         }
                     ]
-                },
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 49283,
-                        "vendor_id": 1133
-                    },
-                    "simple_modifications": [
-                        {
-                            "from": { "pointing_button": "button4" },
-                            "to": [{ "pointing_button": "button4" }]
-                        },
-                        {
-                            "from": { "pointing_button": "button5" },
-                            "to": [{ "pointing_button": "button5" }]
-                        }
-                    ]
-                },
-                {
-                    "identifiers": {
-                        "is_pointing_device": true,
-                        "product_id": 49283,
-                        "vendor_id": 1133
-                    },
-                    "ignore": false
                 }
             ],
             "name": "Default",
