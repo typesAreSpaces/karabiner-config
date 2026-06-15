@@ -463,7 +463,7 @@
                                     "key_code": "t",
                                     "modifiers": { "mandatory": ["left_command", "left_shift"] }
                                 },
-                                "to": [{ "shell_command": "/opt/homebrew/bin/wezterm&" }],
+                                "to": [{ "shell_command": "/opt/homebrew/bin/wezterm start --always-new-process&" }],
                                 "type": "basic"
                             }
                         ]
