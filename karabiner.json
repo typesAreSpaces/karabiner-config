@@ -437,7 +437,8 @@
                                     "key_code": "close_bracket",
                                     "modifiers": { "mandatory": ["left_command", "left_shift"] }
                                 },
-                                "to": [{ "shell_command": "/Applications/Alacritty.app/Contents/MacOS/alacritty&" }],
+                                //"to": [{ "shell_command": "/Applications/Alacritty.app/Contents/MacOS/alacritty&" }],
+                                "to": [{ "shell_command": "/opt/homebrew/bin/wezterm start --always-new-process&" }],
                                 "type": "basic"
                             }
                         ]
@@ -450,7 +451,8 @@
                                     "key_code": "open_bracket",
                                     "modifiers": { "mandatory": ["left_command", "left_shift"] }
                                 },
-                                "to": [{ "shell_command": "/Applications/Alacritty.app/Contents/MacOS/alacritty -e /opt/homebrew/bin/tmux attach&" }],
+                                //"to": [{ "shell_command": "/Applications/Alacritty.app/Contents/MacOS/alacritty -e /opt/homebrew/bin/tmux attach&" }],
+                                "to": [{ "shell_command": "/opt/homebrew/bin/wezterm -e /opt/homebrew/bin/tmux attach&" }],
                                 "type": "basic"
                             }
                         ]
@@ -490,8 +492,7 @@
                         "product_id": 45085,
                         "vendor_id": 1133
                     },
-                    "ignore": false,
-                    "mouse_flip_vertical_wheel": true
+                    "ignore": false
                 },
                 {
                     "identifiers": {
@@ -606,6 +607,31 @@
                             "to": [{ "key_code": "left_command" }]
                         }
                     ]
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 183,
+                        "vendor_id": 5426
+                    },
+                    "ignore": false
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 183,
+                        "vendor_id": 5426
+                    },
+                    "ignore": false
+                },
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 183,
+                        "vendor_id": 5426
+                    },
+                    "ignore": false
                 }
             ],
             "name": "Default",
