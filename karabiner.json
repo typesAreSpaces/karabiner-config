@@ -4,32 +4,84 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "+ zoom 2",
+                        "description": "Logitech button 5: zoom in in supported apps",
                         "manipulators": [
                             {
                                 "from": { "pointing_button": "button5" },
                                 "to": [
                                     {
                                         "key_code": "equal_sign",
-                                        "modifiers": "left_command"
+                                        "modifiers": ["left_command"]
                                     }
                                 ],
-                                "type": "basic"
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Safari$",
+                                            "^org\\.mozilla\\.firefox$",
+                                            "^com\\.google\\.Chrome$",
+                                            "^com\\.apple\\.Preview$",
+                                            "^com\\.apple\\.finder$",
+                                            "^net\\.sourceforge\\.skim-app\\.skim$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    },
+                                    {
+                                        "type": "device_if",
+                                        "identifiers": [
+                                            {
+                                                "vendor_id": 1133,
+                                                "product_id": 45085
+                                            },
+                                            {
+                                                "vendor_id": 1133,
+                                                "product_id": 49283
+                                            }
+                                        ]
+                                    }
+                                ]
                             }
                         ]
                     },
                     {
-                        "description": "- zoom 2",
+                        "description": "Logitech button 4: zoom out in supported apps",
                         "manipulators": [
                             {
                                 "from": { "pointing_button": "button4" },
                                 "to": [
                                     {
                                         "key_code": "hyphen",
-                                        "modifiers": "left_command"
+                                        "modifiers": ["left_command"]
                                     }
                                 ],
-                                "type": "basic"
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Safari$",
+                                            "^org\\.mozilla\\.firefox$",
+                                            "^com\\.google\\.Chrome$",
+                                            "^com\\.apple\\.Preview$",
+                                            "^com\\.apple\\.finder$",
+                                            "^net\\.sourceforge\\.skim-app\\.skim$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    },
+                                    {
+                                        "type": "device_if",
+                                        "identifiers": [
+                                            {
+                                                "vendor_id": 1133,
+                                                "product_id": 45085
+                                            },
+                                            {
+                                                "vendor_id": 1133,
+                                                "product_id": 49283
+                                            }
+                                        ]
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -40,14 +92,14 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^info.sioyek.sioyek"
+                                            "^info\\.sioyek\\.sioyek$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "g",
-                                    "modifiers": { "mandatory": ["left_control"] }
+                                    "modifiers": { "mandatory": ["control"] }
                                 },
                                 "to": [{ "key_code": "escape" }],
                                 "type": "basic"
@@ -55,8 +107,43 @@
                         ]
                     },
                     {
-                        "description": "left_option twice toggle to get into vim-like hjkl arrows in specified apps",
+                        "description": "Double-tap left Option: toggle HJKL navigation (Escape exits)",
                         "manipulators": [
+                            {
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "escape",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "hjkl_arrow_keys_mode",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "left_option pressed",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "hjkl_arrow_keys_mode",
+                                            "text": ""
+                                        }
+                                    },
+                                    { "key_code": "escape" }
+                                ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "hjkl_arrow_keys_mode",
+                                        "value": 1
+                                    }
+                                ]
+                            },
                             {
                                 "conditions": [
                                     {
@@ -71,12 +158,12 @@
                                     },
                                     {
                                         "bundle_identifiers": [
-                                            "^com.apple.Safari",
-                                            "^org.mozilla.firefox",
-                                            "^com.google.Chrome",
-                                            "^com.apple.Preview",
-                                            "^com.apple.finder",
-                                            "^net.sourceforge.skim-app.skim"
+                                            "^com\\.apple\\.Safari$",
+                                            "^org\\.mozilla\\.firefox$",
+                                            "^com\\.google\\.Chrome$",
+                                            "^com\\.apple\\.Preview$",
+                                            "^com\\.apple\\.finder$",
+                                            "^net\\.sourceforge\\.skim-app\\.skim$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -87,6 +174,12 @@
                                         "set_variable": {
                                             "name": "hjkl_arrow_keys_mode",
                                             "value": 1
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "hjkl_arrow_keys_mode",
+                                            "text": "HJKL navigation ON - Escape to type"
                                         }
                                     }
                                 ],
@@ -106,12 +199,12 @@
                                     },
                                     {
                                         "bundle_identifiers": [
-                                            "^com.apple.Safari",
-                                            "^org.mozilla.firefox",
-                                            "^com.google.Chrome",
-                                            "^com.apple.Preview",
-                                            "^com.apple.finder",
-                                            "^net.sourceforge.skim-app.skim"
+                                            "^com\\.apple\\.Safari$",
+                                            "^org\\.mozilla\\.firefox$",
+                                            "^com\\.google\\.Chrome$",
+                                            "^com\\.apple\\.Preview$",
+                                            "^com\\.apple\\.finder$",
+                                            "^net\\.sourceforge\\.skim-app\\.skim$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -123,6 +216,12 @@
                                             "name": "hjkl_arrow_keys_mode",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "hjkl_arrow_keys_mode",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -131,12 +230,12 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com.apple.Safari",
-                                            "^org.mozilla.firefox",
-                                            "^com.google.Chrome",
-                                            "^com.apple.Preview",
-                                            "^com.apple.finder",
-                                            "^net.sourceforge.skim-app.skim"
+                                            "^com\\.apple\\.Safari$",
+                                            "^org\\.mozilla\\.firefox$",
+                                            "^com\\.google\\.Chrome$",
+                                            "^com\\.apple\\.Preview$",
+                                            "^com\\.apple\\.finder$",
+                                            "^net\\.sourceforge\\.skim-app\\.skim$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -183,17 +282,20 @@
                                     },
                                     {
                                         "bundle_identifiers": [
-                                            "^com.apple.Safari",
-                                            "^org.mozilla.firefox",
-                                            "^com.google.Chrome",
-                                            "^com.apple.Preview",
-                                            "^com.apple.finder",
-                                            "^net.sourceforge.skim-app.skim"
+                                            "^com\\.apple\\.Safari$",
+                                            "^org\\.mozilla\\.firefox$",
+                                            "^com\\.google\\.Chrome$",
+                                            "^com\\.apple\\.Preview$",
+                                            "^com\\.apple\\.finder$",
+                                            "^net\\.sourceforge\\.skim-app\\.skim$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
                                 ],
-                                "from": { "key_code": "h" },
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": { "optional": ["shift", "option"] }
+                                },
                                 "to": [{ "key_code": "left_arrow" }],
                                 "type": "basic"
                             },
@@ -206,17 +308,20 @@
                                     },
                                     {
                                         "bundle_identifiers": [
-                                            "^com.apple.Safari",
-                                            "^org.mozilla.firefox",
-                                            "^com.google.Chrome",
-                                            "^com.apple.Preview",
-                                            "^com.apple.finder",
-                                            "^net.sourceforge.skim-app.skim"
+                                            "^com\\.apple\\.Safari$",
+                                            "^org\\.mozilla\\.firefox$",
+                                            "^com\\.google\\.Chrome$",
+                                            "^com\\.apple\\.Preview$",
+                                            "^com\\.apple\\.finder$",
+                                            "^net\\.sourceforge\\.skim-app\\.skim$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
                                 ],
-                                "from": { "key_code": "j" },
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": { "optional": ["shift", "option"] }
+                                },
                                 "to": [{ "key_code": "down_arrow" }],
                                 "type": "basic"
                             },
@@ -229,17 +334,20 @@
                                     },
                                     {
                                         "bundle_identifiers": [
-                                            "^com.apple.Safari",
-                                            "^org.mozilla.firefox",
-                                            "^com.google.Chrome",
-                                            "^com.apple.Preview",
-                                            "^com.apple.finder",
-                                            "^net.sourceforge.skim-app.skim"
+                                            "^com\\.apple\\.Safari$",
+                                            "^org\\.mozilla\\.firefox$",
+                                            "^com\\.google\\.Chrome$",
+                                            "^com\\.apple\\.Preview$",
+                                            "^com\\.apple\\.finder$",
+                                            "^net\\.sourceforge\\.skim-app\\.skim$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
                                 ],
-                                "from": { "key_code": "k" },
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": { "optional": ["shift", "option"] }
+                                },
                                 "to": [{ "key_code": "up_arrow" }],
                                 "type": "basic"
                             },
@@ -252,17 +360,20 @@
                                     },
                                     {
                                         "bundle_identifiers": [
-                                            "^com.apple.Safari",
-                                            "^org.mozilla.firefox",
-                                            "^com.google.Chrome",
-                                            "^com.apple.Preview",
-                                            "^com.apple.finder",
-                                            "^net.sourceforge.skim-app.skim"
+                                            "^com\\.apple\\.Safari$",
+                                            "^org\\.mozilla\\.firefox$",
+                                            "^com\\.google\\.Chrome$",
+                                            "^com\\.apple\\.Preview$",
+                                            "^com\\.apple\\.finder$",
+                                            "^net\\.sourceforge\\.skim-app\\.skim$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
                                 ],
-                                "from": { "key_code": "l" },
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": { "optional": ["shift", "option"] }
+                                },
                                 "to": [{ "key_code": "right_arrow" }],
                                 "type": "basic"
                             },
@@ -275,12 +386,12 @@
                                     },
                                     {
                                         "bundle_identifiers": [
-                                            "^com.apple.Safari",
-                                            "^org.mozilla.firefox",
-                                            "^com.google.Chrome",
-                                            "^com.apple.Preview",
-                                            "^com.apple.finder",
-                                            "^net.sourceforge.skim-app.skim"
+                                            "^com\\.apple\\.Safari$",
+                                            "^org\\.mozilla\\.firefox$",
+                                            "^com\\.google\\.Chrome$",
+                                            "^com\\.apple\\.Preview$",
+                                            "^com\\.apple\\.finder$",
+                                            "^net\\.sourceforge\\.skim-app\\.skim$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -298,12 +409,12 @@
                                     },
                                     {
                                         "bundle_identifiers": [
-                                            "^com.apple.Safari",
-                                            "^org.mozilla.firefox",
-                                            "^com.google.Chrome",
-                                            "^com.apple.Preview",
-                                            "^com.apple.finder",
-                                            "^net.sourceforge.skim-app.skim"
+                                            "^com\\.apple\\.Safari$",
+                                            "^org\\.mozilla\\.firefox$",
+                                            "^com\\.google\\.Chrome$",
+                                            "^com\\.apple\\.Preview$",
+                                            "^com\\.apple\\.finder$",
+                                            "^net\\.sourceforge\\.skim-app\\.skim$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -323,12 +434,12 @@
                             {
                                 "from": {
                                     "key_code": "5",
-                                    "modifiers": { "mandatory": ["left_command"] }
+                                    "modifiers": { "mandatory": ["command"] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "tab",
-                                        "modifiers": "left_command"
+                                        "modifiers": ["left_command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -336,38 +447,90 @@
                         ]
                     },
                     {
-                        "description": "- zoom",
+                        "description": "Logitech Control+Option+right click: zoom out in supported apps",
                         "manipulators": [
                             {
                                 "from": {
-                                    "modifiers": { "mandatory": ["left_control"] },
+                                    "modifiers": { "mandatory": ["control", "option"] },
                                     "pointing_button": "button2"
                                 },
                                 "to": [
                                     {
                                         "key_code": "hyphen",
-                                        "modifiers": "left_command"
+                                        "modifiers": ["left_command"]
                                     }
                                 ],
-                                "type": "basic"
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Safari$",
+                                            "^org\\.mozilla\\.firefox$",
+                                            "^com\\.google\\.Chrome$",
+                                            "^com\\.apple\\.Preview$",
+                                            "^com\\.apple\\.finder$",
+                                            "^net\\.sourceforge\\.skim-app\\.skim$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    },
+                                    {
+                                        "type": "device_if",
+                                        "identifiers": [
+                                            {
+                                                "vendor_id": 1133,
+                                                "product_id": 45085
+                                            },
+                                            {
+                                                "vendor_id": 1133,
+                                                "product_id": 49283
+                                            }
+                                        ]
+                                    }
+                                ]
                             }
                         ]
                     },
                     {
-                        "description": "+ zoom",
+                        "description": "Logitech Control+Option+left click: zoom in in supported apps",
                         "manipulators": [
                             {
                                 "from": {
-                                    "modifiers": { "mandatory": ["left_control"] },
+                                    "modifiers": { "mandatory": ["control", "option"] },
                                     "pointing_button": "button1"
                                 },
                                 "to": [
                                     {
                                         "key_code": "equal_sign",
-                                        "modifiers": "left_command"
+                                        "modifiers": ["left_command"]
                                     }
                                 ],
-                                "type": "basic"
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Safari$",
+                                            "^org\\.mozilla\\.firefox$",
+                                            "^com\\.google\\.Chrome$",
+                                            "^com\\.apple\\.Preview$",
+                                            "^com\\.apple\\.finder$",
+                                            "^net\\.sourceforge\\.skim-app\\.skim$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    },
+                                    {
+                                        "type": "device_if",
+                                        "identifiers": [
+                                            {
+                                                "vendor_id": 1133,
+                                                "product_id": 45085
+                                            },
+                                            {
+                                                "vendor_id": 1133,
+                                                "product_id": 49283
+                                            }
+                                        ]
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -385,7 +548,27 @@
                                         "lazy": true
                                     }
                                 ],
-                                "to_if_alone": [{ "key_code": "escape" }],
+                                "to_if_alone": [
+                                    {
+                                        "set_variable": {
+                                            "name": "hjkl_arrow_keys_mode",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "left_option pressed",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "hjkl_arrow_keys_mode",
+                                            "text": ""
+                                        }
+                                    },
+                                    { "key_code": "escape" }
+                                ],
                                 "type": "basic"
                             }
                         ]
@@ -396,7 +579,7 @@
                             {
                                 "from": {
                                     "key_code": "semicolon",
-                                    "modifiers": { "mandatory": ["left_control"] }
+                                    "modifiers": { "mandatory": ["control"] }
                                 },
                                 "to": [{ "key_code": "delete_or_backspace" }],
                                 "type": "basic"
@@ -409,9 +592,9 @@
                             {
                                 "from": {
                                     "key_code": "e",
-                                    "modifiers": { "mandatory": ["left_command", "left_shift"] }
+                                    "modifiers": { "mandatory": ["control", "option", "command"] }
                                 },
-                                "to": [{ "shell_command": "/opt/homebrew/bin/emacsclient -c -s jose -a emacs&" }],
+                                "to": [{ "shell_command": "/bin/sh \"$HOME/.config/karabiner/bin/open-emacs.sh\" jose &" }],
                                 "type": "basic"
                             }
                         ]
@@ -422,37 +605,9 @@
                             {
                                 "from": {
                                     "key_code": "d",
-                                    "modifiers": { "mandatory": ["left_command", "left_shift"] }
+                                    "modifiers": { "mandatory": ["control", "option", "command"] }
                                 },
-                                "to": [{ "shell_command": "/opt/homebrew/bin/emacsclient -c -s doom -a emacs&" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Open alacritty",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "close_bracket",
-                                    "modifiers": { "mandatory": ["left_command", "left_shift"] }
-                                },
-                                //"to": [{ "shell_command": "/Applications/Alacritty.app/Contents/MacOS/alacritty&" }],
-                                "to": [{ "shell_command": "/opt/homebrew/bin/wezterm start --always-new-process&" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Reattach to alacritty",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "open_bracket",
-                                    "modifiers": { "mandatory": ["left_command", "left_shift"] }
-                                },
-                                //"to": [{ "shell_command": "/Applications/Alacritty.app/Contents/MacOS/alacritty -e /opt/homebrew/bin/tmux attach&" }],
-                                "to": [{ "shell_command": "/opt/homebrew/bin/wezterm -e /opt/homebrew/bin/tmux attach&" }],
+                                "to": [{ "shell_command": "/bin/sh \"$HOME/.config/karabiner/bin/open-emacs.sh\" doom &" }],
                                 "type": "basic"
                             }
                         ]
@@ -463,9 +618,9 @@
                             {
                                 "from": {
                                     "key_code": "t",
-                                    "modifiers": { "mandatory": ["left_command", "left_shift"] }
+                                    "modifiers": { "mandatory": ["control", "option", "command"] }
                                 },
-                                "to": [{ "shell_command": "/opt/homebrew/bin/wezterm start --always-new-process&" }],
+                                "to": [{ "shell_command": "/opt/homebrew/bin/wezterm start --always-new-process &" }],
                                 "type": "basic"
                             }
                         ]
@@ -476,9 +631,9 @@
                             {
                                 "from": {
                                     "key_code": "r",
-                                    "modifiers": { "mandatory": ["left_command", "left_shift"] }
+                                    "modifiers": { "mandatory": ["control", "option", "command"] }
                                 },
-                                "to": [{ "shell_command": "/opt/homebrew/bin/wezterm -e /opt/homebrew/bin/tmux attach&" }],
+                                "to": [{ "shell_command": "/opt/homebrew/bin/wezterm start --always-new-process -- /opt/homebrew/bin/tmux attach &" }],
                                 "type": "basic"
                             }
                         ]
@@ -501,10 +656,6 @@
                         "vendor_id": 10730
                     },
                     "simple_modifications": [
-                        {
-                            "from": { "key_code": "caps_lock" },
-                            "to": [{ "key_code": "escape" }]
-                        },
                         {
                             "from": { "key_code": "f4" },
                             "to": [{ "key_code": "f4" }]
