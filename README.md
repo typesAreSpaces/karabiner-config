@@ -12,11 +12,14 @@ Launcher shortcuts use **Control+Option+Command** (either side of each modifier)
 | --- | --- |
 | E | Open a frame on the `jose` Emacs server |
 | D | Open a frame on the `doom` Emacs server |
-| T | Open a new WezTerm process |
-| R | Open WezTerm and attach to an existing tmux session |
+| `[` | Open a new WezTerm process |
+| `]` | Open WezTerm and attach to an existing tmux session |
 
 The old Command+Shift launcher bindings and duplicate bracket bindings were
 removed so applications can receive their usual shortcuts, including Command+Shift+T.
+
+The WezTerm launchers now use Control+Option+Command+`[` / `]`, replacing
+Control+Option+Command+T / R.
 
 | Shortcut | Action |
 | --- | --- |

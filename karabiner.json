@@ -617,7 +617,7 @@
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "t",
+                                    "key_code": "open_bracket",
                                     "modifiers": { "mandatory": ["control", "option", "command"] }
                                 },
                                 "to": [{ "shell_command": "/opt/homebrew/bin/wezterm start --always-new-process &" }],
@@ -630,7 +630,7 @@
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "r",
+                                    "key_code": "close_bracket",
                                     "modifiers": { "mandatory": ["control", "option", "command"] }
                                 },
                                 "to": [{ "shell_command": "/opt/homebrew/bin/wezterm start --always-new-process -- /opt/homebrew/bin/tmux attach &" }],
