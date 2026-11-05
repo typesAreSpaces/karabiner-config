@@ -4,9 +4,20 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Logitech button 5: zoom in in supported apps",
+                        "description": "Mouse button 5: zoom in",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 641,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": { "pointing_button": "button5" },
                                 "to": [
                                     {
@@ -14,40 +25,25 @@
                                         "modifiers": ["left_command"]
                                     }
                                 ],
-                                "type": "basic",
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.apple\\.Safari$",
-                                            "^org\\.mozilla\\.firefox$",
-                                            "^com\\.google\\.Chrome$",
-                                            "^com\\.apple\\.Preview$",
-                                            "^com\\.apple\\.finder$",
-                                            "^net\\.sourceforge\\.skim-app\\.skim$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    },
-                                    {
-                                        "type": "device_if",
-                                        "identifiers": [
-                                            {
-                                                "vendor_id": 1133,
-                                                "product_id": 45085
-                                            },
-                                            {
-                                                "vendor_id": 1133,
-                                                "product_id": 49283
-                                            }
-                                        ]
-                                    }
-                                ]
+                                "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "Logitech button 4: zoom out in supported apps",
+                        "description": "Mouse button 4: zoom out",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 641,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": { "pointing_button": "button4" },
                                 "to": [
                                     {
@@ -55,33 +51,7 @@
                                         "modifiers": ["left_command"]
                                     }
                                 ],
-                                "type": "basic",
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.apple\\.Safari$",
-                                            "^org\\.mozilla\\.firefox$",
-                                            "^com\\.google\\.Chrome$",
-                                            "^com\\.apple\\.Preview$",
-                                            "^com\\.apple\\.finder$",
-                                            "^net\\.sourceforge\\.skim-app\\.skim$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    },
-                                    {
-                                        "type": "device_if",
-                                        "identifiers": [
-                                            {
-                                                "vendor_id": 1133,
-                                                "product_id": 45085
-                                            },
-                                            {
-                                                "vendor_id": 1133,
-                                                "product_id": 49283
-                                            }
-                                        ]
-                                    }
-                                ]
+                                "type": "basic"
                             }
                         ]
                     },
@@ -110,7 +80,13 @@
                         "description": "Double-tap left Option: toggle HJKL navigation (Escape exits)",
                         "manipulators": [
                             {
-                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "name": "hjkl_arrow_keys_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "escape",
                                     "modifiers": { "optional": ["any"] }
@@ -136,13 +112,7 @@
                                     },
                                     { "key_code": "escape" }
                                 ],
-                                "conditions": [
-                                    {
-                                        "type": "variable_if",
-                                        "name": "hjkl_arrow_keys_mode",
-                                        "value": 1
-                                    }
-                                ]
+                                "type": "basic"
                             },
                             {
                                 "conditions": [
@@ -447,9 +417,20 @@
                         ]
                     },
                     {
-                        "description": "Logitech Control+Option+right click: zoom out in supported apps",
+                        "description": "Mouse Control+Option+right click: zoom out",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 641,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "modifiers": { "mandatory": ["control", "option"] },
                                     "pointing_button": "button2"
@@ -460,40 +441,25 @@
                                         "modifiers": ["left_command"]
                                     }
                                 ],
-                                "type": "basic",
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.apple\\.Safari$",
-                                            "^org\\.mozilla\\.firefox$",
-                                            "^com\\.google\\.Chrome$",
-                                            "^com\\.apple\\.Preview$",
-                                            "^com\\.apple\\.finder$",
-                                            "^net\\.sourceforge\\.skim-app\\.skim$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    },
-                                    {
-                                        "type": "device_if",
-                                        "identifiers": [
-                                            {
-                                                "vendor_id": 1133,
-                                                "product_id": 45085
-                                            },
-                                            {
-                                                "vendor_id": 1133,
-                                                "product_id": 49283
-                                            }
-                                        ]
-                                    }
-                                ]
+                                "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "Logitech Control+Option+left click: zoom in in supported apps",
+                        "description": "Mouse Control+Option+left click: zoom in",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 641,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "modifiers": { "mandatory": ["control", "option"] },
                                     "pointing_button": "button1"
@@ -504,33 +470,7 @@
                                         "modifiers": ["left_command"]
                                     }
                                 ],
-                                "type": "basic",
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.apple\\.Safari$",
-                                            "^org\\.mozilla\\.firefox$",
-                                            "^com\\.google\\.Chrome$",
-                                            "^com\\.apple\\.Preview$",
-                                            "^com\\.apple\\.finder$",
-                                            "^net\\.sourceforge\\.skim-app\\.skim$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    },
-                                    {
-                                        "type": "device_if",
-                                        "identifiers": [
-                                            {
-                                                "vendor_id": 1133,
-                                                "product_id": 45085
-                                            },
-                                            {
-                                                "vendor_id": 1133,
-                                                "product_id": 49283
-                                            }
-                                        ]
-                                    }
-                                ]
+                                "type": "basic"
                             }
                         ]
                     },
@@ -617,7 +557,7 @@
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "open_bracket",
+                                    "key_code": "close_bracket",
                                     "modifiers": { "mandatory": ["control", "option", "command"] }
                                 },
                                 "to": [{ "shell_command": "/opt/homebrew/bin/wezterm start --always-new-process &" }],
@@ -630,7 +570,7 @@
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "close_bracket",
+                                    "key_code": "open_bracket",
                                     "modifiers": { "mandatory": ["control", "option", "command"] }
                                 },
                                 "to": [{ "shell_command": "/opt/homebrew/bin/wezterm start --always-new-process -- /opt/homebrew/bin/tmux attach &" }],
@@ -774,7 +714,8 @@
                         "product_id": 183,
                         "vendor_id": 5426
                     },
-                    "ignore": false
+                    "ignore": false,
+                    "treat_as_built_in_keyboard": true
                 },
                 {
                     "identifiers": {
