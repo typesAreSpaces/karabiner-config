@@ -478,6 +478,18 @@
                         "description": "Tap Caps Lock for ESC or Hold for Control",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "is_keyboard": true,
+                                                "product_id": 258,
+                                                "vendor_id": 10730
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": { "optional": ["any"] }
@@ -596,6 +608,10 @@
                         "vendor_id": 10730
                     },
                     "simple_modifications": [
+                        {
+                            "from": { "key_code": "caps_lock" },
+                            "to": [{ "key_code": "escape" }]
+                        },
                         {
                             "from": { "key_code": "f4" },
                             "to": [{ "key_code": "f4" }]

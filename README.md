@@ -23,8 +23,9 @@ Control+Option+Command+T / R.
 
 | Shortcut | Action |
 | --- | --- |
-| Tap Caps Lock | Escape and exit navigation mode |
-| Hold Caps Lock with another key | Control |
+| Caps Lock on Kinesis Advantage2 | Escape and exit navigation mode (also when held) |
+| Tap Caps Lock on other keyboards | Escape and exit navigation mode |
+| Hold Caps Lock with another key on other keyboards | Control |
 | Control+semicolon | Backspace |
 | Command+5 | Command+Tab |
 | Control+G in Sioyek | Escape |
@@ -131,7 +132,8 @@ server is unavailable, it starts the matching named daemon and connects again:
 The script is invoked through `/bin/sh` and supplies a Homebrew-aware PATH.
 The tmux launcher requires an existing session.
 
-Device identifiers use decimal `vendor_id:product_id` values. The keyboard entry
-`10730:258` now uses the global Caps Lock tap/hold rule. Existing device-specific
+Device identifiers use decimal `vendor_id:product_id` values. The Kinesis
+Advantage2 keyboard (`10730:258`) maps Caps Lock directly to Escape and is excluded
+from the global Caps Lock tap/hold rule. Existing device-specific
 Command/Option swaps and function-key settings are retained. Use Karabiner
 EventViewer to identify other device entries before removing or changing them.
